@@ -1,14 +1,22 @@
 class Solution {
-    public boolean solution(int x) {
-        boolean answer = false;
-        int temp=x;
-        int divisor=0;
-        while(temp>0){
-            divisor+=temp%10;
-            temp=temp/10;
+    public int solution(int num) {
+        int answer = 0;
+        long number = (long)num;
+        while(number!=1){
+            if(answer==500)
+                break;
+            
+            if(number%2==0){
+                number=number/2;
+            }else{
+                number=number*3+1;
+            }
+            answer++;
         }
-        if(x%divisor==0)
-            answer=true;
+        if(number!=1){
+            answer=-1;
+        }
+            
         return answer;
     }
 }
